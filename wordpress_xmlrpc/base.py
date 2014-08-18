@@ -22,6 +22,7 @@ class Client(object):
         try:
             self.server = xmlrpc_client.ServerProxy(url, allow_none=True, transport=transport)
             self.supported_methods = self.server.mt.supportedMethods()
+            print self.supported_methods
         except xmlrpc_client.ProtocolError:
             e = sys.exc_info()[1]
             raise ServerConnectionError(repr(e))
