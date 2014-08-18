@@ -196,6 +196,7 @@ class WordPressUser(WordPressBase):
         'email': 'email',
         'nicename': 'nicename',
         'display_name': 'display_name',
+        'pass': 'password',
     }
 
     def __str__(self):
