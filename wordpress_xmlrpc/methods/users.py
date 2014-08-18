@@ -1,6 +1,6 @@
 from wordpress_xmlrpc.base import *
 from wordpress_xmlrpc.wordpress import WordPressBlog, WordPressAuthor, WordPressUser
-
+NAMESPACE = 'extapi'
 
 class NewUser(AuthenticatedMethod):
     """
@@ -11,7 +11,7 @@ class NewUser(AuthenticatedMethod):
 
     Returns: ID of the newly-created user id (an integer).
     """
-    method_name = 'wp.newUser'
+    method_name = '{0}.newUser'.format(NAMESPACE)
     method_args = ('content',)
 
 class GetUsers(AuthenticatedMethod):
