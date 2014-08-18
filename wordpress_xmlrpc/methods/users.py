@@ -2,6 +2,18 @@ from wordpress_xmlrpc.base import *
 from wordpress_xmlrpc.wordpress import WordPressBlog, WordPressAuthor, WordPressUser
 
 
+class NewUser(AuthenticatedMethod):
+    """
+    Create a new user in the system.
+
+    Parameters:
+        `content`: A :class:`WordPressUser` instance with at least the `title` and `content` values set.
+
+    Returns: ID of the newly-created user id (an integer).
+    """
+    method_name = 'wp.newUser'
+    method_args = ('content',)
+
 class GetUsers(AuthenticatedMethod):
     """
     Retrieve list of users in the blog.
