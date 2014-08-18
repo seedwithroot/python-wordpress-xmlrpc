@@ -33,6 +33,7 @@ class Client(object):
 
         server_method = getattr(self.server, method.method_name)
         args = method.get_args(self)
+        print args
 
         try:
             raw_result = server_method(*args)
