@@ -11,7 +11,7 @@ class NewUser(AuthenticatedMethod):
 
     Returns: ID of the newly-created user id (an integer).
     """
-    method_name = '{0}.add_user'.format(NAMESPACE)
+    method_name = '{0}.callWpMethod.add_user'.format(NAMESPACE)
     method_args = ('content',)
 
 class GetUsers(AuthenticatedMethod):
